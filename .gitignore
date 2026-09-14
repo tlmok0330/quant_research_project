@@ -1,0 +1,81 @@
+# =============================================================
+# CRITICAL: API credentials — never commit these
+# =============================================================
+.env
+*.key
+secrets.yaml
+secrets.json
+credentials.json
+
+# =============================================================
+# Raw data — keep off GitHub (may contain licensed data)
+# =============================================================
+data/raw/
+data/processed/
+*.parquet
+*.feather
+*.h5
+*.hdf5
+
+# Allow gitkeep placeholders
+!data/**/.gitkeep
+
+# =============================================================
+# Python
+# =============================================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+*.whl
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+.env.local
+
+# =============================================================
+# Jupyter
+# =============================================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# =============================================================
+# OS / editor
+# =============================================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Comprehensive development tests kept locally; submit only tests/test_core.py
+archive_tests/
+
+# =============================================================
+# Outputs that should be regenerated
+# =============================================================
+outputs/figures/*.png
+outputs/figures/*.pdf
+outputs/figures/*.svg
+
+# Keep the three report figures in the submission repository
+!outputs/figures/btc_monthly_session_share.png
+!outputs/figures/btc_equity_vs_cme_evening.png
+!outputs/figures/btc_placebo_date_shifts.png
+
+# Submit only the five result tables used by the compact report
+outputs/tables/*.csv
+!outputs/tables/btc_headline_results.csv
+!outputs/tables/btc_data_quality.csv
+!outputs/tables/btc_dose_response.csv
+!outputs/tables/btc_placebo_dates.csv
+!outputs/tables/btc_t9_cme_placebo.csv

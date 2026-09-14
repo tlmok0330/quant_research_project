@@ -1,0 +1,15 @@
+check,severity,passed,message
+timezone_aware,critical,True,index timezone is UTC
+monotonic_index,critical,True,timestamps are sorted
+unique_timestamps,critical,True,no duplicate timestamps
+positive_prices,critical,True,all prices positive
+ohlc_ordering,critical,True,high/low bracket open and close everywhere
+bar_coverage,warning,True,"288 of 420,768 expected bars missing (0.07%)"
+on_grid,warning,True,all timestamps lie on the expected grid
+longest_gap,info,True,longest gap between consecutive bars is 1 days 00:05:00
+grid_alignment,warning,True,timestamps lie exactly on the 5-minute grid
+bar_convention,warning,False,"bar convention is not identifiable from a continuous 24/7 timestamp grid: both conventions produce the same minute-of-day pattern. Confirm from provider documentation, and cross-check against a session-bounded feed such as equities."
+stale_prices,warning,True,longest run of unchanged closes is 5 bar(s)
+return_outliers,warning,False,603 return(s) beyond 12.0 robust sigma; largest is 87.2 sigma
+zero_volume_bars,warning,True,0 bar(s) with zero volume (0.00%)
+return_method_agreement,warning,True,close-to-close and intra-bar realised variance differ by 0.33%
